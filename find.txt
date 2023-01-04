@@ -1,7 +1,2 @@
-1.
-touch 201707010000 start.txt
-touch 201707252359 end.txt
-
-2.
-find . -newer start.txt -a ! -newer end.txt -exed cp {} /toDest/
+find . -type f -newermt 2017-07-01 ! -newermt 2017-07-25 -exec cp "{}" /toDest/ \;
 ==> 7월 1일 부터 7월 25일 사이에 생성된 파일을 /toDest/라는 폴더로 카피하는 명령어
